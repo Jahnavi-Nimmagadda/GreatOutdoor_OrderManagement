@@ -1,0 +1,18 @@
+<h2 class="text-center text-success b">Cancel OrderProduct</h2>
+<div class="row justify-content-center align-items-center h-100 a">
+
+  <form>
+    <div class="form-group md-form form-lg ">
+      <div class="form-group">
+        <label for="id">Order Id</label>
+        <input type="text" [(ngModel)]="orderId" placeholder="Enter Id" name="orderId" class="form-control"
+          id="orderId" required>
+         
+      </div>
+
+
+    </div>
+    <button class="btn btn-danger btn-sm" (click)="delete(orderId)">Delete</button>
+  </form>
+<h6 class="btn-info" >{{message}}</h6>
+</div>

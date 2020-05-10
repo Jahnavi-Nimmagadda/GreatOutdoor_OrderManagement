@@ -1,0 +1,33 @@
+
+<div class="container">
+    <div class="form-group">
+        <label for="name" >User Id</label>
+        <input type="text" [(ngModel)]="userId" placeholder="Enter UserId" name="userId" class="form-control" id="userId" required>
+      </div>
+      <button class="btn btn-success" (click)="onSubmit(userId)">Submit</button>
+    <table class="table" >
+        <thead>
+            <tr>
+                <th>User Id</th>
+                <th>Product Id</th>
+                <th >Quantity</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let cart of data">
+            <td> {{cart.userId}}</td>
+            <td> {{cart.productId}} </td>
+            <td> {{cart.quantity}} </td>
+          
+          
+            
+            <td> 
+                <button type="button" class="btn btn-large btn-block btn-primary" (click) = onDelete(cart)> 
+                   Delete
+                </button>
+            </td>
+        </tbody> 
+        </table>
+</div>
+

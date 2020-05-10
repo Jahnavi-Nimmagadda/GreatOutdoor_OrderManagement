@@ -1,0 +1,45 @@
+
+<div class="row">
+	<div class="col"></div>
+	<div class="col">
+
+    <div class="container ">
+    
+	<h3 class="col ">Add Item To Cart</h3>
+    
+    <form #userForm="ngForm" (ngSubmit)='addItemToCart(userForm.value)'>
+
+        <div class="form-group">
+            <label><span class="req"></span>User Id: </label>
+			<input required minlength="4" type="string" #userIdRef='ngModel' name="userId" ngModel class="form-control">
+            <div *ngIf='userIdRef.errors && userIdRef.touched' class="alert alert-danger">
+                <div [hidden]='!userIdRef.errors.required'> Provide UserId </div>
+            </div>
+        </div>
+		
+        <div class="form-group">
+            <label><span class="req"></span>Product Id: </label>
+			<input required minlength="3" type="string" #productIdRef='ngModel' name="productId" ngModel class="form-control">
+            <div *ngIf='productIdRef.errors  && productIdRef.touched' class="alert alert-danger">
+                <div [hidden]='!productIdRef.errors.required'>Provide ProductId</div>
+            </div>
+        </div>
+        
+		<div class="form-group">
+            <label><span class="req"></span>Quantity: </label>
+           <input required minlength="3" type="number" #quantityRef='ngModel' name="quantity" ngModel class="form-control">
+            <div *ngIf='quantityRef.errors  && quantityRef.touched' class="alert alert-danger">
+                <div [hidden]='!quantityRef.errors.required'>Provide Quantity</div>
+            </div>
+        </div>
+        <button  class="btn btn-primary"  (click)="addItemToCart(cart)">Submit</button>
+		
+    </form>
+    </div>
+	
+	</div>
+    
+	<div class="col"></div>
+
+</div>
+

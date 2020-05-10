@@ -1,0 +1,38 @@
+
+
+<div class="container">
+    <div class="form-group">
+        <label for="name" >Order Id</label>
+        <input type="text" [(ngModel)]="orderId" placeholder="Enter UserId" name="orderId" class="form-control" id="orderId" required>
+      </div>
+
+      <button class="btn btn-success" (click)="onSubmit(orderId)">Submit</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Gift Status</th>
+                <th>Order Id</th>
+                <th>Product Id</th>
+                <th>Product Status</th>
+                <th>ProductUIN</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let order of data">
+            <td> {{order.giftStatus}} </td>
+            <td> {{order.orderId}}</td>
+            <td> {{order.productId}} </td>
+            <td> {{order.productStatus}} </td>
+            <td> {{order.productUIN}} </td>
+          
+            
+            <td> 
+                <button type="button" class="btn btn-large btn-block btn-primary" (click) = onDelete(order)> 
+                   Delete
+                </button>
+            </td>
+        </tbody> 
+        </table>
+</div>
+

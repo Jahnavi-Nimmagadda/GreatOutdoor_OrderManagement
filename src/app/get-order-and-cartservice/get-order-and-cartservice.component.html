@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="form-group">
+      <label for="userId" >User Id</label>
+      <input type="text" [(ngModel)]="userId" placeholder="Enter UserId" name="userId" class="form-control" id="userId" required>
+    </div>
+<button  class="btn btn-success"  (click)="submit(userId)">Submit</button>
+
+    <table class="table" >
+
+      <thead>
+          <tr>
+              <th>Order Id</th>
+              <th>User Id</th>
+              <th>Address Id</th>
+              <th>Order Dispatch Status</th>
+              <th>Order Initiate Time</th>      
+              <th>Order Dispatch Time</th>
+            
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor = "let r of getord">
+          <td> {{r.orderId}} </td>
+          <td> {{r.userId}}</td>
+          <td> {{r.addressId}} </td>
+          <td> {{r.orderDispatchStatus}} </td>
+          <td> {{r.orderInitiateTime}} </td>
+          <td>{{r.orderDispatchTime}}</td>        
+        </tbody> 
+      </table>
+
+
+    </div>
